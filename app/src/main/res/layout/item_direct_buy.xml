@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <!-- Top row: emoji + millet info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_product_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="38sp"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_product_millet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_dark" />
+
+                <TextView
+                    android:id="@+id/tv_product_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:textColor="@color/brown_primary"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:id="@+id/tv_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/yellow_millet"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background_cream"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Farmer details -->
+        <TextView
+            android:id="@+id/tv_farmer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/green_dark" />
+
+        <TextView
+            android:id="@+id/tv_farmer_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/brown_primary"
+            android:layout_marginTop="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/tv_product_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="13sp"
+                android:textColor="@color/brown_light" />
+
+            <TextView
+                android:id="@+id/tv_product_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/brown_light" />
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/background_cream"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Contact buttons row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_whatsapp"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="WhatsApp"
+                android:textSize="11sp"
+                android:backgroundTint="#25D366"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_call"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="📞 Call"
+                android:textSize="11sp"
+                android:backgroundTint="@color/green_primary"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <!-- Contact buttons row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:id="@+id/btn_sms"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="💬 SMS"
+                android:textSize="11sp"
+                android:backgroundTint="@color/brown_primary"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_email"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="✉ Email"
+                android:textSize="11sp"
+                android:backgroundTint="@color/green_dark"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
