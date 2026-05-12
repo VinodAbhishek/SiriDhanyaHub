@@ -1,20 +1,50 @@
 package com.vinodabhishek.siridhanyahub
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // Load default fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, MandiWatchFragment())
+            .commit()
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.mandiWatch -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, MandiWatchFragment())
+                        .commit()
+                    true
+                }
+                R.id.recipeLab -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, RecipeLabFragment())
+                        .commit()
+                    true
+                }
+                R.id.healthBenefits -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, HealthBenefitsFragment())
+                        .commit()
+                    true
+                }
+                R.id.directBuy -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, DirectBuyFragment())
+                        .commit()
+                    true
+                }
+                else -> false
+            }
         }
     }
 }

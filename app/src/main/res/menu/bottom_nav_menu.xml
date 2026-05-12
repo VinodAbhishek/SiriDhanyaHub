@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mandiWatch"
+        android:title="Mandi Watch"
+        android:icon="@android:drawable/ic_menu_today" />
+
+    <item
+        android:id="@+id/recipeLab"
+        android:title="Recipe Lab"
+        android:icon="@android:drawable/ic_menu_edit" />
+
+    <item
+        android:id="@+id/healthBenefits"
+        android:title="Health"
+        android:icon="@android:drawable/ic_menu_info_details" />
+
+    <item
+        android:id="@+id/directBuy"
+        android:title="Direct Buy"
+        android:icon="@android:drawable/ic_menu_share" />
+
+</menu>
