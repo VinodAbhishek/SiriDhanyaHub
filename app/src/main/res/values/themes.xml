@@ -1,8 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.SiriDhanyaHub" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<resources>
+    <style name="Base.Theme.SiriDhanyaHub" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#2E7D32</item>
+        <item name="colorPrimaryVariant">#1B5E20</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#795548</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorBackground">#F1F8E9</item>
+        <item name="colorOnBackground">#1B5E20</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#33691E</item>
     </style>
 
     <style name="Theme.SiriDhanyaHub" parent="Base.Theme.SiriDhanyaHub" />
