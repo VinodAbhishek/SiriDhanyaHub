@@ -1,14 +1,12 @@
 <resources>
     <style name="Base.Theme.SiriDhanyaHub" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">#2E7D32</item>
-        <item name="colorPrimaryVariant">#1B5E20</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorSecondary">#795548</item>
         <item name="colorOnSecondary">#FFFFFF</item>
-        <item name="colorBackground">#F1F8E9</item>
-        <item name="colorOnBackground">#1B5E20</item>
-        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorSurface">#F1F8E9</item>
         <item name="colorOnSurface">#33691E</item>
+        <item name="android:colorBackground">#F1F8E9</item>
     </style>
 
     <style name="Theme.SiriDhanyaHub" parent="Base.Theme.SiriDhanyaHub" />
