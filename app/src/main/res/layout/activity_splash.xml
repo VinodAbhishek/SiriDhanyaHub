@@ -2,31 +2,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_primary"
+    android:orientation="vertical"
     android:gravity="center"
-    android:orientation="vertical">
+    android:background="@color/green_primary">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="🌾"
-        android:textSize="72sp" />
+        android:textSize="80sp"
+        android:layout_marginBottom="16dp" />
 
     <TextView
+        android:id="@+id/splash_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Siri-Dhanya Hub"
-        android:textColor="@color/white"
+        android:text="SiriDhanyaHub"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:textColor="@color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Millet Value Chain App"
+        android:text="ಸಿರಿಧಾನ್ಯ ಹಬ್"
+        android:textSize="20sp"
         android:textColor="@color/white"
-        android:textSize="16sp"
         android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celebrating Karnataka\'s Millets"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="4dp"
+        android:alpha="0.85" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:indeterminateTint="@color/white" />
 
 </LinearLayout>
