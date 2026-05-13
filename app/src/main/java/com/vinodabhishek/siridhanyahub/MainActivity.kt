@@ -1,5 +1,6 @@
 package com.vinodabhishek.siridhanyahub
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,7 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        // Load default fragment
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, MandiWatchFragment())
             .commit()
@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, DirectBuyFragment())
                         .commit()
+                    true
+                }
+                R.id.milletQuiz -> {
+                    val intent = Intent(this, QuizActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

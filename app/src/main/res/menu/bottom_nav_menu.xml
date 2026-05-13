@@ -21,4 +21,9 @@
         android:title="Direct Buy"
         android:icon="@android:drawable/ic_menu_share" />
 
+    <item
+        android:id="@+id/milletQuiz"
+        android:title="Quiz 🧠"
+        android:icon="@android:drawable/ic_menu_help" />
+
 </menu>
