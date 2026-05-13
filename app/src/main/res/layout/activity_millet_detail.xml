@@ -10,6 +10,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Header card -->
         <androidx.cardview.widget.CardView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
@@ -23,35 +24,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:background="@color/green_primary"
-                android:gravity="center">
+                android:background="@color/green_primary">
 
                 <Button
-                    android:id="@+id/btn_recipe_back"
+                    android:id="@+id/btn_millet_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="← Back"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/green_dark"
-                    android:layout_gravity="start" />
+                    android:backgroundTint="@color/green_dark" />
 
                 <TextView
-                    android:id="@+id/tv_detail_emoji"
+                    android:id="@+id/tv_md_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="60sp" />
-
-                <TextView
-                    android:id="@+id/tv_detail_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginTop="12dp" />
 
                 <TextView
-                    android:id="@+id/tv_detail_millet"
+                    android:id="@+id/tv_md_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
@@ -63,35 +56,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
                     android:layout_marginTop="12dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_time"
+                        android:id="@+id/tv_md_price"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="13sp"
-                        android:textColor="@color/white"
-                        android:gravity="center" />
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/yellow_millet" />
 
                     <TextView
-                        android:id="@+id/tv_detail_difficulty"
-                        android:layout_width="0dp"
+                        android:id="@+id/tv_md_trend"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textSize="13sp"
-                        android:textColor="@color/white"
-                        android:gravity="center" />
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_calories"
+                        android:id="@+id/tv_md_high"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="13sp"
-                        android:textColor="@color/white"
-                        android:gravity="center" />
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_md_low"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="13sp"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
 
@@ -99,6 +104,7 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!-- Price chart card -->
         <androidx.cardview.widget.CardView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
@@ -117,24 +123,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🛒 Ingredients"
-                    android:textSize="18sp"
+                    android:text="📈 Weekly Price Trend"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/green_dark"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginBottom="8dp" />
 
-                <TextView
-                    android:id="@+id/tv_detail_ingredients"
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart_price"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/brown_primary"
-                    android:lineSpacingExtra="6dp" />
+                    android:layout_height="220dp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+        <!-- Demand chart card -->
         <androidx.cardview.widget.CardView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
@@ -153,19 +157,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="👨‍🍳 Cooking Steps"
-                    android:textSize="18sp"
+                    android:text="📊 Weekly Demand Index"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/green_dark"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_marginBottom="8dp" />
 
-                <TextView
-                    android:id="@+id/tv_detail_steps"
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart_demand"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/brown_primary"
-                    android:lineSpacingExtra="8dp" />
+                    android:layout_height="220dp" />
 
             </LinearLayout>
 

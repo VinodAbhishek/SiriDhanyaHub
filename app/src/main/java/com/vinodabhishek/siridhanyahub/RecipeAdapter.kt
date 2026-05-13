@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecipeAdapter(private val recipeList: List<Recipe>, private val context: Context) :
+class RecipeAdapter(private val recipeList: MutableList<Recipe>, private val context: Context) :
     RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -51,4 +51,10 @@ class RecipeAdapter(private val recipeList: List<Recipe>, private val context: C
     }
 
     override fun getItemCount() = recipeList.size
+
+    fun updateList(newList: List<Recipe>) {
+        recipeList.clear()
+        recipeList.addAll(newList)
+        notifyDataSetChanged()
+    }
 }

@@ -15,15 +15,16 @@
         android:background="@color/green_primary"
         android:padding="16dp" />
 
-    <TextView
+    <EditText
+        android:id="@+id/search_recipes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Healthy Millet Recipes for You"
-        android:textSize="13sp"
-        android:textColor="@color/brown_primary"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="4dp" />
+        android:hint="🔍 Search recipes or millets..."
+        android:padding="12dp"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        android:textSize="14sp"
+        android:inputType="text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_recipes"

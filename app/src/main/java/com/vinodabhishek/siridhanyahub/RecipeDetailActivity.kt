@@ -1,6 +1,7 @@
 package com.vinodabhishek.siridhanyahub
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -32,14 +33,8 @@ class RecipeDetailActivity : AppCompatActivity() {
         val stepsText = steps.mapIndexed { i, s -> "${i + 1}. $s" }.joinToString("\n\n")
         findViewById<TextView>(R.id.tv_detail_steps).text = stepsText
 
-        supportActionBar?.apply {
-            title = name
-            setDisplayHomeAsUpEnabled(true)
+        findViewById<Button>(R.id.btn_recipe_back).setOnClickListener {
+            finish()
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressedDispatcher.onBackPressed()
-        return true
     }
 }
