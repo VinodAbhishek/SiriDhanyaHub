@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buy directly from Karnataka farmers"
+        android:text="Buy directly from local farmers — no middlemen!"
         android:textSize="13sp"
         android:textColor="@color/brown_primary"
         android:paddingStart="16dp"

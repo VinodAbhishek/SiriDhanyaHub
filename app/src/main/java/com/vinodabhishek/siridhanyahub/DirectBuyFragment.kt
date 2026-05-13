@@ -23,45 +23,16 @@ class DirectBuyFragment : Fragment() {
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_direct_buy)
         recycler.layoutManager = LinearLayoutManager(requireContext())
 
-        val products = listOf(
-            FarmerProduct(
-                "Finger Millet", "ರಾಗಿ (Ragi)",
-                "Ramesh Gowda", "Davangere, Karnataka",
-                45, 200, "Organic A-Grade",
-                "9876543210", "ramesh.gowda@gmail.com", "🟤"
-            ),
-            FarmerProduct(
-                "Foxtail Millet", "ನವಣೆ (Navane)",
-                "Suresh Patil", "Gadag, Karnataka",
-                55, 150, "Premium Quality",
-                "9845678901", "suresh.patil@gmail.com", "🌾"
-            ),
-            FarmerProduct(
-                "Pearl Millet", "ಸಜ್ಜೆ (Sajje)",
-                "Manjunath Reddy", "Bellary, Karnataka",
-                38, 300, "Farm Fresh",
-                "9738291046", "manju.reddy@gmail.com", "🌿"
-            ),
-            FarmerProduct(
-                "Sorghum", "ಬರಗು (Baragu)",
-                "Venkatesh Kumar", "Raichur, Karnataka",
-                32, 500, "Certified Organic",
-                "9654321098", "venkatesh.k@gmail.com", "☀️"
-            ),
-            FarmerProduct(
-                "Kodo Millet", "ಊದಲು (Oodalu)",
-                "Basavraj Nayak", "Koppal, Karnataka",
-                75, 80, "Rare Variety",
-                "9512345678", "basavraj.n@gmail.com", "🌱"
-            ),
-            FarmerProduct(
-                "Little Millet", "ಸಾಮೆ (Saame)",
-                "Krishnappa Hegde", "Shivamogga, Karnataka",
-                65, 120, "Traditional Variety",
-                "9423456789", "krishna.hegde@gmail.com", "✨"
-            )
+        val farmers = listOf(
+            FarmerProduct("Ramesh Kumar", "Ragi (Finger Millet)", "50 kg", "35", "Davangere, Karnataka", "9876543210", true),
+            FarmerProduct("Suresh Naik", "Navane (Foxtail Millet)", "80 kg", "42", "Haveri, Karnataka", "9845612340", true),
+            FarmerProduct("Manjunath G", "Sajje (Pearl Millet)", "100 kg", "28", "Ballari, Karnataka", "9741236540", false),
+            FarmerProduct("Lakshmi Devi", "Baragu (Sorghum)", "60 kg", "22", "Raichur, Karnataka", "9632587410", true),
+            FarmerProduct("Venkatesh R", "Oodalu (Kodo Millet)", "40 kg", "55", "Mysuru, Karnataka", "9512348760", true),
+            FarmerProduct("Basavraj M", "Ragi (Finger Millet)", "120 kg", "32", "Chitradurga, Karnataka", "9988776655", false),
+            FarmerProduct("Anitha S", "Navane (Foxtail Millet)", "70 kg", "40", "Dharwad, Karnataka", "9123456780", true)
         )
 
-        recycler.adapter = DirectBuyAdapter(products)
+        recycler.adapter = DirectBuyAdapter(farmers, requireContext())
     }
 }
