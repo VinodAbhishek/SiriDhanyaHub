@@ -1,9 +1,11 @@
 package com.vinodabhishek.siridhanyahub
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,47 +22,37 @@ class HealthBenefitsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        view.findViewById<Button>(R.id.btn_open_calendar).setOnClickListener {
+            val intent = Intent(requireContext(), SeasonalCalendarActivity::class.java)
+            startActivity(intent)
+        }
+
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_health)
         recycler.layoutManager = LinearLayoutManager(requireContext())
 
-        val healthData = listOf(
-            HealthBenefit(
-                "Finger Millet", "Ragi 🟤", "💪",
-                "Highest calcium among all cereals",
-                "Controls blood sugar levels",
-                "Great for bone strength & growth",
-                "Low (54)", 7.3f, 72.6f, 11.5f, 8.6f
-            ),
-            HealthBenefit(
-                "Foxtail Millet", "Navane 🌾", "🧠",
-                "Boosts brain & nervous system health",
-                "Rich in iron & B vitamins",
-                "Helps manage diabetes",
-                "Low (50)", 12.3f, 63.2f, 14.0f, 10.5f
-            ),
-            HealthBenefit(
-                "Pearl Millet", "Sajje 🌿", "❤️",
-                "Reduces bad cholesterol (LDL)",
-                "High in magnesium for heart health",
-                "Good source of plant protein",
-                "Medium (55)", 11.6f, 67.5f, 11.3f, 9.6f
-            ),
-            HealthBenefit(
-                "Sorghum", "Baragu ☀️", "🛡️",
-                "Rich in antioxidants",
-                "Gluten-free & gut friendly",
-                "Supports weight management",
-                "Low (50)", 10.4f, 70.7f, 10.2f, 8.7f
-            ),
-            HealthBenefit(
-                "Kodo Millet", "Oodalu 🌱", "🔋",
-                "High in dietary fiber",
-                "Manages blood pressure",
-                "Boosts energy & reduces fatigue",
-                "Low (45)", 9.8f, 65.9f, 14.3f, 10.0f
-            )
+        val milletList = listOf(
+            HealthBenefit("Finger Millet", "Ragi 🟤", "💪",
+                "Rich in calcium — stronger bones", "Controls blood sugar levels",
+                "High fiber aids digestion", "Glycemic Index: Low (54)",
+                7.3f, 72.6f, 11.5f, 8.6f),
+            HealthBenefit("Foxtail Millet", "Navane 🟡", "🌟",
+                "Lowers bad cholesterol", "Rich in iron — prevents anemia",
+                "Boosts immunity", "Glycemic Index: Very Low (50)",
+                12.3f, 60.9f, 8.0f, 4.4f),
+            HealthBenefit("Pearl Millet", "Sajje ⚪", "⚡",
+                "High protein for muscle building", "Rich in iron and zinc",
+                "Boosts energy levels", "Glycemic Index: Medium (55)",
+                11.6f, 61.8f, 1.2f, 2.3f),
+            HealthBenefit("Sorghum", "Baragu 🟠", "🌿",
+                "Gluten-free — safe for celiac", "Rich in antioxidants",
+                "Good for heart health", "Glycemic Index: Low (50)",
+                10.4f, 64.7f, 6.3f, 1.6f),
+            HealthBenefit("Kodo Millet", "Oodalu 🟢", "🩸",
+                "Best for diabetes management", "Detoxifies the body",
+                "Rich in polyphenols", "Glycemic Index: Very Low (52)",
+                9.8f, 65.9f, 9.0f, 2.6f)
         )
 
-        recycler.adapter = HealthAdapter(healthData, requireContext())
+        recycler.adapter = HealthAdapter(milletList, requireContext())
     }
 }
