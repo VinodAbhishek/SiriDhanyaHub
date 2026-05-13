@@ -15,15 +15,31 @@
         android:background="@color/green_primary"
         android:padding="16dp" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buy directly from local farmers — no middlemen!"
-        android:textSize="13sp"
-        android:textColor="@color/brown_primary"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="4dp" />
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buy directly from local farmers!"
+            android:textSize="13sp"
+            android:textColor="@color/brown_primary"
+            android:gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btn_open_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙️ About"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/green_dark"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_direct_buy"
