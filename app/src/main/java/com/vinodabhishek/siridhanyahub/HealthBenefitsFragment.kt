@@ -25,47 +25,42 @@ class HealthBenefitsFragment : Fragment() {
 
         val healthData = listOf(
             HealthBenefit(
-                "Finger Millet", "Ragi 🟤",
-                "💪",
+                "Finger Millet", "Ragi 🟤", "💪",
                 "Highest calcium among all cereals",
                 "Controls blood sugar levels",
                 "Great for bone strength & growth",
-                "Low (54)"
+                "Low (54)", 7.3f, 72.6f, 11.5f, 8.6f
             ),
             HealthBenefit(
-                "Foxtail Millet", "Navane 🌾",
-                "🧠",
+                "Foxtail Millet", "Navane 🌾", "🧠",
                 "Boosts brain & nervous system health",
                 "Rich in iron & B vitamins",
                 "Helps manage diabetes",
-                "Low (50)"
+                "Low (50)", 12.3f, 63.2f, 14.0f, 10.5f
             ),
             HealthBenefit(
-                "Pearl Millet", "Sajje 🌿",
-                "❤️",
+                "Pearl Millet", "Sajje 🌿", "❤️",
                 "Reduces bad cholesterol (LDL)",
                 "High in magnesium for heart health",
                 "Good source of plant protein",
-                "Medium (55)"
+                "Medium (55)", 11.6f, 67.5f, 11.3f, 9.6f
             ),
             HealthBenefit(
-                "Sorghum", "Baragu ☀️",
-                "🛡️",
+                "Sorghum", "Baragu ☀️", "🛡️",
                 "Rich in antioxidants",
                 "Gluten-free & gut friendly",
                 "Supports weight management",
-                "Low (50)"
+                "Low (50)", 10.4f, 70.7f, 10.2f, 8.7f
             ),
             HealthBenefit(
-                "Kodo Millet", "Oodalu 🌱",
-                "🔋",
+                "Kodo Millet", "Oodalu 🌱", "🔋",
                 "High in dietary fiber",
                 "Manages blood pressure",
                 "Boosts energy & reduces fatigue",
-                "Low (45)"
+                "Low (45)", 9.8f, 65.9f, 14.3f, 10.0f
             )
         )
 
-        recycler.adapter = HealthAdapter(healthData)
+        recycler.adapter = HealthAdapter(healthData, requireContext())
     }
 }

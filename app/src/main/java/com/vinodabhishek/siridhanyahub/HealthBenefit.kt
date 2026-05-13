@@ -7,5 +7,9 @@ data class HealthBenefit(
     val benefit1: String,
     val benefit2: String,
     val benefit3: String,
-    val glycemicIndex: String
+    val glycemicIndex: String,
+    val protein: Float,
+    val carbs: Float,
+    val fiber: Float,
+    val minerals: Float
 )
