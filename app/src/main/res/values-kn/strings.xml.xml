@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ಸಿರಿಧಾನ್ಯ ಹಬ್</string>
+    <string name="tab_mandi">ಮಂಡಿ ವಾಚ್</string>
+    <string name="tab_recipe">ರೆಸಿಪಿ ಲ್ಯಾಬ್</string>
+    <string name="tab_health">ಆರೋಗ್ಯ ಪ್ರಯೋಜನ</string>
+    <string name="tab_direct_buy">ನೇರ ಖರೀದಿ</string>
+    <string name="mandi_title">🏪 ಮಂಡಿ ವಾಚ್</string>
+    <string name="mandi_subtitle">ಲೈವ್ ರಾಗಿ ಬೆಲೆಗಳು (ಸಿಮ್ಯುಲೇಟೆಡ್)</string>
+    <string name="recipe_title">🍽️ ರೆಸಿಪಿ ಲ್ಯಾಬ್</string>
+    <string name="recipe_subtitle">ನಿಮಗಾಗಿ ಆರೋಗ್ಯಕರ ಸಿರಿಧಾನ್ಯ ರೆಸಿಪಿಗಳು</string>
+    <string name="health_title">💚 ಆರೋಗ್ಯ ಪ್ರಯೋಜನ</string>
+    <string name="health_subtitle">ಸಿರಿಧಾನ್ಯಗಳು ಏಕೆ ಸೂಪರ್‌ಫುಡ್</string>
+    <string name="direct_buy_title">🛒 ನೇರ ಖರೀದಿ</string>
+    <string name="direct_buy_subtitle">ಕರ್ನಾಟಕ ರೈತರಿಂದ ನೇರವಾಗಿ ಖರೀದಿಸಿ</string>
+    <string name="btn_whatsapp">WhatsApp</string>
+    <string name="btn_call">📞 ಕರೆ</string>
+    <string name="btn_sms">💬 SMS</string>
+    <string name="btn_email">✉ ಇಮೇಲ್</string>
+    <string name="language_toggle">EN</string>
+    <string name="splash_tagline">ಕರ್ನಾಟಕದ ಸಿರಿಧಾನ್ಯಗಳನ್ನು ಪ್ರೀತಿಸಿ</string>
+</resources>
