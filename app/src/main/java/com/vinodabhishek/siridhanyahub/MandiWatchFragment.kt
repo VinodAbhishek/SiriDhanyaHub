@@ -1,9 +1,11 @@
 package com.vinodabhishek.siridhanyahub
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +21,11 @@ class MandiWatchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.btn_open_calculator).setOnClickListener {
+            val intent = Intent(requireContext(), CalculatorActivity::class.java)
+            startActivity(intent)
+        }
 
         val recycler = view.findViewById<RecyclerView>(R.id.recycler_mandi)
         recycler.layoutManager = LinearLayoutManager(requireContext())
