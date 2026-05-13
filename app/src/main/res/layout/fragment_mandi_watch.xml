@@ -18,11 +18,27 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Live Millet Prices (Simulated)"
+        android:text="Weekly Price Trend (₹/quintal)"
         android:textSize="13sp"
         android:textColor="@color/brown_primary"
         android:paddingStart="16dp"
         android:paddingTop="8dp"
+        android:paddingBottom="4dp" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/price_chart"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_margin="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Live Millet Prices (Simulated)"
+        android:textSize="13sp"
+        android:textColor="@color/brown_primary"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
         android:paddingBottom="4dp" />
 
     <androidx.recyclerview.widget.RecyclerView
