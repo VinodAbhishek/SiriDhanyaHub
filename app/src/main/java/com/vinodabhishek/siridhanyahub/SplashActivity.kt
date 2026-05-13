@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
         NotificationScheduler.scheduleDailyNotification(this)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }, 2000)
     }

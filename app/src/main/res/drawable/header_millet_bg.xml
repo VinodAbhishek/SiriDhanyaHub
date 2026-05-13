@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#1B5E20"
+                android:centerColor="#2E7D32"
+                android:endColor="#1A237E"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <item android:top="10dp" android:left="10dp" android:right="260dp" android:bottom="140dp">
+        <shape android:shape="oval"><solid android:color="#33FFFFFF" /></shape>
+    </item>
+    <item android:top="30dp" android:left="50dp" android:right="220dp" android:bottom="120dp">
+        <shape android:shape="oval"><solid android:color="#22FFFFFF" /></shape>
+    </item>
+    <item android:top="50dp" android:left="100dp" android:right="160dp" android:bottom="100dp">
+        <shape android:shape="oval"><solid android:color="#22FFFFFF" /></shape>
+    </item>
+    <item android:top="15dp" android:left="220dp" android:right="20dp" android:bottom="130dp">
+        <shape android:shape="oval"><solid android:color="#33FFFFFF" /></shape>
+    </item>
+    <item android:top="40dp" android:left="160dp" android:right="60dp" android:bottom="110dp">
+        <shape android:shape="oval"><solid android:color="#1AFFFFFF" /></shape>
+    </item>
+    <item android:top="110dp" android:left="20dp" android:right="280dp" android:bottom="20dp">
+        <shape android:shape="oval"><solid android:color="#22FFFFFF" /></shape>
+    </item>
+    <item android:top="120dp" android:left="150dp" android:right="80dp" android:bottom="15dp">
+        <shape android:shape="oval"><solid android:color="#33FFFFFF" /></shape>
+    </item>
+    <item android:top="100dp" android:left="260dp" android:right="10dp" android:bottom="30dp">
+        <shape android:shape="oval"><solid android:color="#22FFFFFF" /></shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00000000"
+                android:endColor="#33000000"
+                android:angle="270" />
+        </shape>
+    </item>
+
+</layer-list>
