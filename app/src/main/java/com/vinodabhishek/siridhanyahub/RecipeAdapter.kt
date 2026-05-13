@@ -1,12 +1,14 @@
 package com.vinodabhishek.siridhanyahub
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecipeAdapter(private val recipeList: List<Recipe>) :
+class RecipeAdapter(private val recipeList: List<Recipe>, private val context: Context) :
     RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -32,6 +34,20 @@ class RecipeAdapter(private val recipeList: List<Recipe>) :
         holder.time.text = "⏱ ${item.time}"
         holder.difficulty.text = "📊 ${item.difficulty}"
         holder.calories.text = "🔥 ${item.calories}"
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, RecipeDetailActivity::class.java).apply {
+                putExtra("recipe_name", item.name)
+                putExtra("recipe_millet", item.millet)
+                putExtra("recipe_time", item.time)
+                putExtra("recipe_difficulty", item.difficulty)
+                putExtra("recipe_calories", item.calories)
+                putExtra("recipe_emoji", item.emoji)
+                putStringArrayListExtra("recipe_ingredients", ArrayList(item.ingredients))
+                putStringArrayListExtra("recipe_steps", ArrayList(item.steps))
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = recipeList.size

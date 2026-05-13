@@ -6,5 +6,7 @@ data class Recipe(
     val time: String,
     val difficulty: String,
     val calories: String,
-    val emoji: String
+    val emoji: String,
+    val ingredients: List<String>,
+    val steps: List<String>
 )
