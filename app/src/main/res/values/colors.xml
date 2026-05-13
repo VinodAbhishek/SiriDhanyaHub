@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="green_dark">#1B5E20</color>
     <color name="green_primary">#2E7D32</color>
-    <color name="green_light">#4CAF50</color>
-    <color name="brown_primary">#795548</color>
-    <color name="brown_light">#A1887F</color>
-    <color name="background_cream">#F1F8E9</color>
-    <color name="white">#FFFFFF</color>
-    <color name="text_dark">#212121</color>
+    <color name="green_dark">#1B5E20</color>
+    <color name="brown_primary">#5D4037</color>
+    <color name="brown_light">#8D6E63</color>
     <color name="yellow_millet">#F9A825</color>
+    <color name="background_cream">#FFF8E1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>
