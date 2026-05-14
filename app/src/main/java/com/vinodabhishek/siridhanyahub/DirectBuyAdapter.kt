@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 
 class DirectBuyAdapter(private val products: List<FarmerProduct>, private val context: Context) :
@@ -21,7 +21,10 @@ class DirectBuyAdapter(private val products: List<FarmerProduct>, private val co
         val milletType: TextView = itemView.findViewById(R.id.tv_millet_type)
         val price: TextView = itemView.findViewById(R.id.tv_farmer_price)
         val quantity: TextView = itemView.findViewById(R.id.tv_farmer_quantity)
-        val contactBtn: Button = itemView.findViewById(R.id.btn_contact_farmer)
+        val btnCall: LinearLayout = itemView.findViewById(R.id.btn_call)
+        val btnSms: LinearLayout = itemView.findViewById(R.id.btn_sms)
+        val btnWhatsapp: LinearLayout = itemView.findViewById(R.id.btn_whatsapp)
+        val btnEmail: LinearLayout = itemView.findViewById(R.id.btn_email)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BuyViewHolder {
@@ -39,31 +42,10 @@ class DirectBuyAdapter(private val products: List<FarmerProduct>, private val co
         holder.quantity.text = "📦 ${item.quantity} available"
         holder.organicBadge.visibility = if (item.organic) View.VISIBLE else View.GONE
 
-        holder.contactBtn.setOnClickListener {
-            showContactDialog(item)
-        }
-    }
-
-    private fun showContactDialog(item: FarmerProduct) {
-        val options = arrayOf(
-            "📞  Call Farmer",
-            "💬  SMS Farmer",
-            "🟢  WhatsApp",
-            "📧  Send Email"
-        )
-
-        AlertDialog.Builder(context)
-            .setTitle("Contact ${item.farmerName}")
-            .setItems(options) { _, which ->
-                when (which) {
-                    0 -> dialPhone(item.phone)
-                    1 -> sendSms(item)
-                    2 -> openWhatsApp(item)
-                    3 -> sendEmail(item)
-                }
-            }
-            .setNegativeButton("Cancel", null)
-            .show()
+        holder.btnCall.setOnClickListener { dialPhone(item.phone) }
+        holder.btnSms.setOnClickListener { sendSms(item) }
+        holder.btnWhatsapp.setOnClickListener { openWhatsApp(item) }
+        holder.btnEmail.setOnClickListener { sendEmail(item) }
     }
 
     private fun dialPhone(phone: String) {
