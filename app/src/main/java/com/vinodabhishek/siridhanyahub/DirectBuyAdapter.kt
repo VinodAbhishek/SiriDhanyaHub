@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 
 class DirectBuyAdapter(private val products: List<FarmerProduct>, private val context: Context) :
@@ -39,11 +40,74 @@ class DirectBuyAdapter(private val products: List<FarmerProduct>, private val co
         holder.organicBadge.visibility = if (item.organic) View.VISIBLE else View.GONE
 
         holder.contactBtn.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse("tel:${item.phone}")
+            showContactDialog(item)
+        }
+    }
+
+    private fun showContactDialog(item: FarmerProduct) {
+        val options = arrayOf(
+            "📞  Call Farmer",
+            "💬  SMS Farmer",
+            "🟢  WhatsApp",
+            "📧  Send Email"
+        )
+
+        AlertDialog.Builder(context)
+            .setTitle("Contact ${item.farmerName}")
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> dialPhone(item.phone)
+                    1 -> sendSms(item)
+                    2 -> openWhatsApp(item)
+                    3 -> sendEmail(item)
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun dialPhone(phone: String) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$phone")
+        }
+        context.startActivity(intent)
+    }
+
+    private fun sendSms(item: FarmerProduct) {
+        val message = "Hello ${item.farmerName}, I am interested in buying your ${item.milletType} at ₹${item.price}/kg. Please let me know the availability."
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("smsto:${item.phone}")
+            putExtra("sms_body", message)
+        }
+        context.startActivity(intent)
+    }
+
+    private fun openWhatsApp(item: FarmerProduct) {
+        val message = "Hello ${item.farmerName}! 👋\n\nI found your listing on SiriDhanyaHub and I'm interested in buying:\n🌾 ${item.milletType}\n💰 ₹${item.price}/kg\n📍 ${item.location}\n\nIs it still available?"
+        val phone = "91${item.phone}"
+        try {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://wa.me/$phone?text=${Uri.encode(message)}")
+                setPackage("com.whatsapp")
+            }
+            context.startActivity(intent)
+        } catch (e: Exception) {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://wa.me/$phone?text=${Uri.encode(message)}")
             }
             context.startActivity(intent)
         }
+    }
+
+    private fun sendEmail(item: FarmerProduct) {
+        val subject = "Interested in ${item.milletType} - SiriDhanyaHub"
+        val body = "Dear ${item.farmerName},\n\nI came across your listing on SiriDhanyaHub and I am interested in purchasing your ${item.milletType} at ₹${item.price}/kg.\n\nKindly let me know the availability and how we can proceed.\n\nThank you!"
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body)
+        }
+        context.startActivity(Intent.createChooser(intent, "Send Email"))
     }
 
     override fun getItemCount() = products.size
